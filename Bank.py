@@ -66,7 +66,7 @@ def transaction():
     main()
     return True
 
-
+# меню программы
 def main():
     print("""
     1 - Amount of money
