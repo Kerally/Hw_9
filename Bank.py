@@ -37,6 +37,7 @@ class Bank:
             return "Not enought money"
         else:
             Bank.value = Bank.value - self.amount_of_output
+            Bank.value = Bank.value - (self.amount_of_output/100*1)
             # add transaction "output money" to transaction list
             transaction = ("{}: Output money: {}").format(Bank.data, self.amount_of_output)
             Bank.list_of_transaction.append(transaction)
@@ -56,6 +57,7 @@ class Bank:
         else:
             Bank.value_deposit = Bank.value_deposit + self.amount_to_deposit
             Bank.value = Bank.value - self.amount_to_deposit
+            Bank.value = Bank.value - (self.amount_to_deposit/100*1)
             # add transaction "made a deposit" to transaction list
             transaction = ("{}: Made a deposit: {}").format(Bank.data, self.amount_to_deposit)
             Bank.list_of_transaction.append(transaction)
@@ -69,7 +71,7 @@ class Bank:
 
 if __name__ == '__main__':
     print(Bank.get_value())
-    transaction1 = Bank(234, 123.45)
+    transaction1 = Bank(234.56, 123.45)
     print(transaction1.output())
     print(transaction1.deposit())
     pprint(Bank.get_transaction())
