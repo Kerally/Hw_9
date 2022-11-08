@@ -71,7 +71,7 @@ class Bank:
 
 if __name__ == '__main__':
     print(Bank.get_value())
-    transaction1 = Bank(234.56, 123.45)
+    transaction1 = Bank(238, 123.12)
     print(transaction1.output())
     print(transaction1.deposit())
     pprint(Bank.get_transaction())
